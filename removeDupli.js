@@ -4,15 +4,17 @@
  */
 var removeDuplicates = function (nums) {
   // remove duplicates without creating copy of array
-  for (i = 0; i < nums.length; i++) {
-    for (j = i++; j < nums.length; i++) {
-      if (nums[i] === nums[j]) {
-        nums.shift();
-      }
+  let index = 0;
+  for (let num of nums) {
+    if (num !== nums[index]) {
+      nums.shift();
+      index++;
     }
   }
+
+  console.log(nums);
 };
 
-const nums = [1, 1, 2];
+const nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 
-console.log(removeDuplicates(nums));
+removeDuplicates(nums);
